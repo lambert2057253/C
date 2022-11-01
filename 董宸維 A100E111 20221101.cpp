@@ -5,30 +5,30 @@
 int main(){
 	int buffer[20],top=0,value,x=0;
 	while(x != 4){
-		printf("1.¿é¤J,2.¨ú¥X,3.¦L¥X,4.Â÷¶}\n");
+		printf("1.è¼¸å…¥,2.å–å‡º,3.å°å‡º,4.é›¢é–‹\n");
 		scanf("%d",&x);
 		if(x==1){
-			printf("½Ğ¿é¤J¼Æ­È");
+			printf("è«‹è¼¸å…¥æ•¸å€¼");
 			scanf("%d",&value);
 			if(push(buffer,value,top)==-1){
-				printf("¸Ì­±ªº¼Æ­È¤wº¡");
+				printf("è£¡é¢çš„æ•¸å€¼å·²æ»¿");
 			}
 		}
 		else if(x==2){
 			if(pull(buffer,value,top)==-1){
-				printf("¸Ì­±¼Æ­È¬°ªÅ");
+				printf("è£¡é¢æ•¸å€¼ç‚ºç©º");
 			}else{
-				printf("®³¨úªºª½¬°%d",value);
+				printf("æ‹¿å–çš„ç›´ç‚º%d",value);
 			}
 		}
 		else if(x==3){
-			if(top==0)printf("¸Ì­±¼Æ­È¬°ªÅ");
+			if(top==0)printf("è£¡é¢æ•¸å€¼ç‚ºç©º");
 			for(int i=0;i<top;i++){
 				printf("%d,",buffer[i]);
 			}
 			printf("\n");
 		}
-		else if(x>4)printf("¿ï¾Ü¿ù»~!¦A¸Õ¤@¦¸!");
+		else if(x>4)printf("é¸æ“‡éŒ¯èª¤!å†è©¦ä¸€æ¬¡!");
 	}
 	return 1;
 } 
@@ -38,7 +38,7 @@ int push(int buffer[20],int value,int&top){
 	top++;
 	return 1;
 }
-int pull(int buffer[20],int value,int&top){
+int pull(int buffer[20],int& value,int&top){
 	if(top==0)return-1;
 	top--;
 	value = buffer[top];
